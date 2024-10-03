@@ -49,3 +49,6 @@ app.use(({res}) => {
     res.json({message})
 })
 app.listen(port, () => console.log(`Notre application node js tourne sur http://localhost:${port}`))
+
+//UniqueConstraintError
+//ValidationError   

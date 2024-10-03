@@ -1,3 +1,5 @@
+const validTypes = ["Feu", "Plante", "Eau", "poison", "Vol", "Normal", "Insecte", "Electrick", "Fée"]
+
 module.exports = (sequelize, DataTypes) => {
     return sequelize.define(
         'Pokemon',
@@ -10,6 +12,9 @@ module.exports = (sequelize, DataTypes) => {
             name: {
                 type: DataTypes.STRING,
                 allowNull: false,
+                unique: {
+                    msg: "Le nom est déjà utilisé !"
+                },
                 validate: {
                     notEmpty: {msg: "Le nom ne doit pas être vide !"},  // Utilisation correcte de notEmpty
                     notNull: {msg: "Le nom ne doit pas être nul !"},
@@ -66,6 +71,22 @@ module.exports = (sequelize, DataTypes) => {
                 },
                 set(types) {
                     this.setDataValue('types', types.join())
+                },
+                validate: {
+                    isTypesValid(value){ //isTypesValid est un nom arbitraire donnée à la fonction
+                        if(!value) {
+                            throw new Error("Un pokémon doit avoir au moins un types !")
+                        }
+                        if(value.split(',').length > 3) {
+                            throw new Error("Un pokémon ne peut pas avoir plus de trois types !")
+                        }
+
+                        value.split(",").forEach(type => {
+                            if(!validTypes.includes(type)) {
+                                throw new Error(`Le type du pokémon n'est pas connu ! il doit appartenir à la liste suivante ${validTypes}`)    
+                            }
+                        })
+                    }
                 }
             }
         },
@@ -76,3 +97,6 @@ module.exports = (sequelize, DataTypes) => {
         }
     )
 }
+
+
+//Les validateurs
