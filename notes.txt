@@ -1,0 +1,32 @@
+Requêtes avancées : 
+    Query 
+        - name
+        - limit
+        - orderBy
+
+    paramètres URL et de requêtes
+
+Les deux règles à suivre pour respecter une bonne structuration de l'API REST 
+    - Les paramètres d'URL doivent être utiliser pour identifier des resources spécificique
+    - Les paramètres de requêtes sont utiliser pour trier ou filtrer les resources
+
+Les urls doivent toujours êtes écrit en minuscule
+
+
+Utilisations d'un opérateur sequelize
+    Les opérateurs courants
+
+        Op.eq: Égal à (=)
+        Op.ne: Différent de (!=)
+        Op.gt: Supérieur à (>)
+        Op.gte: Supérieur ou égal à (>=)
+        Op.lt: Inférieur à (<)
+        Op.lte: Inférieur ou égal à (<=)
+        Op.like: Correspondance partielle (LIKE en SQL)
+        Op.notLike: Ne correspond pas (NOT LIKE en SQL)
+        Op.in: Dans une liste de valeurs (IN en SQL)
+        Op.notIn: Pas dans une liste de valeurs (NOT IN en SQL)
+        Op.between: Entre deux valeurs
+        Op.notBetween: Pas entre deux valeurs
+        Op.or: OU logique
+        Op.and: ET logique
