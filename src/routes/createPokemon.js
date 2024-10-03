@@ -15,6 +15,8 @@ module.exports = (app) => {
             const message = `Le pokemon ${pokemon.name} crée avec succès !`
             console.log(pokemon)
             res.json({message, pokemonData: pokemon})
+        }).catch(error => {
+            res.status(500).json({error: error})
         })
     })
 }
