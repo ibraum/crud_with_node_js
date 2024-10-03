@@ -30,3 +30,16 @@ Utilisations d'un opérateur sequelize
         Op.notBetween: Pas entre deux valeurs
         Op.or: OU logique
         Op.and: ET logique
+
+
+
+order
+limit
+
+- methodes appliquable 
+    findAll
+    destroy
+    findByPK
+    findAndCountAll
+    create
+    update
