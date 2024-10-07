@@ -1,9 +1,10 @@
 const { ValidationError, UniqueConstraintError } = require('sequelize')
-const {pokemonFactory} = require('../db/sequelize')
+const {pokemonFactory} = require('../../db/sequelize')
+const auth = require('../../auth/auth')
 
 
 module.exports = (app) => {
-    app.post('/api/pokemons/create', (req, res) =>{
+    app.post('/api/pokemons/create', auth, (req, res) =>{
         pokemonFactory.create(
             {
                 name: req.body.name,

@@ -10,6 +10,7 @@
  - update a pokemon
  - get a pokemon
 
+
 # TECHNOLOGIES
 
  - Javascript (js)
@@ -34,9 +35,11 @@
         - npm install node
         - npm install morgan
         - npm install mysql2 --save
+        - npm install bcrypt --save
         - npm install express --save
         - npm install sequelize --save
         - npm install nodemon --save-dev
+        - npm install jsonwebtoken --save
         - npm install body-parser --save-dev
         - npm install serve-favicon --save-dev
 

@@ -1,14 +1,17 @@
 const express = require('express')
-const { pokemonFactory, createDB } = require('./src/db/sequelize')
+const { pokemonFactory, createDB, createUserDB } = require('./src/db/sequelize')
 const morgan = require('morgan')
 const favicon = require('serve-favicon')
 const bodyParser = require('body-parser')
 
-const findAllPokemon = require('./src/routes/findAllPokemon')
-const createPokemon = require('./src/routes/createPokemon')
-const findPokemon = require('./src/routes/findPokemon')
-const removePokemon = require('./src/routes/removePokemon')
-const updatePokemon = require('./src/routes/updatePokemon')
+
+const login = require('./src/routes/user_route/login')
+
+const findAllPokemon = require('./src/routes/pokemon_route/findAllPokemon')
+const createPokemon = require('./src/routes/pokemon_route/createPokemon')
+const findPokemon = require('./src/routes/pokemon_route/findPokemon')
+const removePokemon = require('./src/routes/pokemon_route/removePokemon')
+const updatePokemon = require('./src/routes/pokemon_route/updatePokemon')
 
 const app = express()
 
@@ -26,8 +29,12 @@ app
         morgan('dev')
     ).use(bodyParser.json())
 
-//Initialize database
+//Initialize databases
 createDB()
+createUserDB()
+
+//login 
+login(app)
 
 //Find all pokemons
 findAllPokemon(app)
@@ -48,7 +55,7 @@ app.use(({res}) => {
     message = `Impossible de trouvé la ressource demandé`
     res.json({message})
 })
-app.listen(port, () => console.log(`Notre application node js tourne sur http://localhost:${port}`))
+app.listen(port, () => console.log(`L'application node js tourne sur http://localhost:${port}`))
 
 //UniqueConstraintError
 //ValidationError   

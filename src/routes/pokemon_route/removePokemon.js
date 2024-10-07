@@ -1,7 +1,8 @@
-const {pokemonFactory} = require('../db/sequelize')
+const {pokemonFactory} = require('../../db/sequelize')
+const auth = require('../../auth/auth')
 
 module.exports = (app) => {
-    app.delete('/api/pokemons/:id', (req, res) => {
+    app.delete('/api/pokemons/:id',auth, (req, res) => {
         const id = req.params.id
         pokemonFactory.findByPk(id).then(pokemon => {
             message = `Pokémon supprimé avec succès !`

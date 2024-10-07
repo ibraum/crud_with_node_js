@@ -1,4 +1,4 @@
-const {pokemonFactory} = require('../db/sequelize')
+const {pokemonFactory} = require('../../db/sequelize')
 
 module.exports = (app) => {
     app.get('/api/pokemons/:id', (req, res) => {

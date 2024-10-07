@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
             name: {
                 type: DataTypes.STRING,
                 allowNull: false,
+           
                 unique: {
                     msg: "Le nom est déjà utilisé !"
                 },

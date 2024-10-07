@@ -3,6 +3,7 @@ Requêtes avancées :
         - name
         - limit
         - orderBy
+        - where
 
     paramètres URL et de requêtes
 
@@ -40,6 +41,15 @@ limit
     findAll
     destroy
     findByPK
+    findOne
     findAndCountAll
     create
     update
+
+
+
+
+Implémentation d'une sécurisation ou cryptage de mot de passe avec bcrypt
+implémentation du endpoint pour la connexion.
+
+Génération d'un JWT

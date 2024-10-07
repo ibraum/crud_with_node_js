@@ -1,4 +1,4 @@
-const {pokemonFactory} = require('../db/sequelize')
+const {pokemonFactory} = require('../../db/sequelize')
 const { Op } = require('sequelize')
 
 module.exports = (app) => {
