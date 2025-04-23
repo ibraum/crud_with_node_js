@@ -29,19 +29,7 @@
         git clone https://github.com/ibraum/crud_api_with_jdbc.git
 
     2. Second
-
-        - npm init
         - npm install
-        - npm install node
-        - npm install morgan
-        - npm install mysql2 --save
-        - npm install bcrypt --save
-        - npm install express --save
-        - npm install sequelize --save
-        - npm install nodemon --save-dev
-        - npm install jsonwebtoken --save
-        - npm install body-parser --save-dev
-        - npm install serve-favicon --save-dev
 
 
 ### Thanks
